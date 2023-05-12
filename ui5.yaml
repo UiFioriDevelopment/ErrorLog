@@ -1,0 +1,32 @@
+specVersion: "2.4"
+metadata:
+  name: com.itell.bradford.ZERROR_LOG
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        backend:
+          - path: /sap
+            url: http://vhacud01ci.us4.sap.acumed.net:44300
+            client: "231"
+            scp: true
+            destination: Acumed_DEV_231
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: com.itell.bradford.ZERROR_LOG
+        ui5Theme: sap_fiori_3

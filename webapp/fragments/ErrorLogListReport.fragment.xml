@@ -1,0 +1,61 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:table="sap.ui.table" xmlns:smartTable="sap.ui.comp.smarttable">
+	<!--<smartTable:SmartTable id="subPlanHeader" class="sapUiNoContentPadding" entitySet="ZSD_SUBPLAN_HEADER_CON" beforeRebindTable="onRebindTable"-->
+	<!--	tableType="ResponsiveTable" useExportToExcel="true" useTablePersonalisation="true" smartFilterId="smartFilterBar"-->
+	<!--	persistencyKey="com.itell.bradford.ZSD_SUBPLAN_MAINT.view.SmartTable" enableAutoBinding="false" showVariantManagement="false"-->
+	<!--	showRowCount="false" requestAtLeastFields="salesorganization,subplanid,status,planversionnum"-->
+	<!--	ignoredFields="internalid">-->
+	<!-- initiallyVisibleFields="subplanid,salesorganization,planversionnum,planversiondesc,promoid"-->
+	<!--<smartTable:customToolbar>-->
+	<!--	<OverflowToolbar design="Transparent">-->
+	<!--		<ToolbarSpacer/>-->
+	<!--		<Button text="{i18n>NewSubPlan}" press="onNewSubPlan" type="Transparent"/>-->
+	<!--	</OverflowToolbar>-->
+	<!--</smartTable:customToolbar>-->
+	<Table id="idTab" mode="SingleSelectMaster" itemPress="onNavigation" alternateRowColors="true" growingThreshold="20" growing="true"
+		growingScrollToLoad="true" items="{TestData>/}">
+		<columns>
+			<Column>
+				<customData>
+					<core:CustomData key="p13nData" value='\{"columnKey": "salesorganization","leadingProperty": "salesorganization", "columnIndex": "1"}'/>
+				</customData>
+				<Text text="{i18n>KeyField1}"></Text>
+			</Column>
+			<Column>
+				<customData>
+					<core:CustomData key="p13nData" value='\{"columnKey": "subplanid","leadingProperty": "subplanid", "columnIndex": "2"}'/>
+				</customData>
+				<Text text="{i18n>KeyField2}"></Text>
+			</Column>
+			<Column>
+				<customData>
+					<core:CustomData key="p13nData" value='\{"columnKey": "planversionnum","leadingProperty": "planversionnum", "columnIndex": "3"}'/>
+				</customData>
+				<Text text="{i18n>KeyField3}"></Text>
+			</Column>
+			<Column>
+				<customData>
+					<core:CustomData key="p13nData" value='\{"columnKey": "planversiondesc","leadingProperty": "planversiondesc", "columnIndex": "4"}'/>
+				</customData>
+				<Text text="{i18n>Field4}"></Text>
+			</Column>
+			<Column>
+				<customData>
+					<core:CustomData key="p13nData" value='\{"columnKey": "promoid","leadingProperty": "promoid", "columnIndex": "5"}'/>
+				</customData>
+				<Text text="{i18n>Field5}"></Text>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation">
+				<cells>
+					<Text text="{TestData>KeyField1}"></Text>
+					<Text text="{TestData>KeyField2}"></Text>
+					<Text text="{TestData>KeyField3}"></Text>
+					<Text text="{TestData>Field4}"></Text>
+					<Text text="{TestData>Field5}"></Text>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<!--</smartTable:SmartTable>-->
+</core:FragmentDefinition>
